@@ -1,8 +1,8 @@
 bundle:
-  groupId: io.github.ks-jenkins
-  artifactId: ks-jenkins
-  description: Jenkins formula for Kubesphere
-  vendor: Kubesphere Community
+  groupId: io.github.opsbox-ecosystem
+  artifactId: oes-jenkins
+  description: Jenkins formula for Opsbox EcoSystem
+  vendor: Opsbox EcoSystem
 buildSettings:
   docker:
     base: "jenkins/jenkins:2.319.1"
@@ -12,3 +12,18 @@ buildSettings:
   pomIgnoreRoot: true
   pomIncludeWar: true
 
+systemProperties:
+  hudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID: "true"
+  file.encoding: UTF-8
+  sun.jnu.encoding: UTF-8 
+  jenkins.install.runSetupWizard: "false"
+  hudson.model.LoadStatistics.clock: 2000
+  udson.model.ParametersAction.keepUndefinedParameters: "true"
+  org.apache.commons.jelly.tags.fmt.timeZone: Asia/Shanghai
+  user.timezone: Asia/Shanghai
+  com.sun.jndi.ldap.connect.pool.timeout: 300000 
+groovyHooks:
+  - type: "init"
+    id: "bundle-plugins"
+    source:
+      dir: remove-bundle-plugins.groovy
