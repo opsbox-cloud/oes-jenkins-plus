@@ -1,0 +1,14 @@
+bundle:
+  groupId: io.github.ks-jenkins
+  artifactId: ks-jenkins
+  description: Jenkins formula for Kubesphere
+  vendor: Kubesphere Community
+buildSettings:
+  docker:
+    base: "jenkins/jenkins:2.319.1"
+    tag: "registry.cn-hangzhou.aliyuncs.com/k8ops/ks-jenkins:v2.319.1-dev1"
+    build: true
+  pom: pom.xml
+  pomIgnoreRoot: true
+  pomIncludeWar: true
+
