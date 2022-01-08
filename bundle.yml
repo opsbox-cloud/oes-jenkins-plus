@@ -46,9 +46,3 @@ groovyHooks:
     source:
       dir: remove-bundle-plugins.groovy
 
-# 注：使用了pom.xml方式管理插件，这里就不生效
-plugins:
-  - source:
-      git: https://github.com/seanly/pipeline-gitee-lib-plugin.git
-      branch: master
-
