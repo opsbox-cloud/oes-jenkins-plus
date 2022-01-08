@@ -1,8 +1,8 @@
 # Just a Makefile for manual testing
 .PHONY: all
 
-ARTIFACT_ID = pom-input-demo
-VERSION = 2.319.1-pom-input-SNAPSHOT
+ARTIFACT_ID = oes-jenkins
+VERSION = v1.0.0-2.319.1-SNAPSHOT
 
 all: clean build
 
@@ -13,8 +13,8 @@ build: tmp/output/target/${ARTIFACT_ID}-${VERSION}.war
 
 tmp/output/target/${ARTIFACT_ID}-${VERSION}.war:
 	java \
-	    -jar $(shell ls ./custom-war-packager-cli-*-jar-with-dependencies.jar) \
-	    -configPath packager-config.yml -version ${VERSION}
+	    -jar $(shell ls ./cwp-*.jar) \
+	    -configPath bundle.yml -version ${VERSION}
 
 run: tmp/output/target/${ARTIFACT_ID}-${VERSION}.war
 	docker run --rm \

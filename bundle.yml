@@ -1,0 +1,54 @@
+bundle:
+  groupId: io.github.opsbox-ecosystem
+  artifactId: oes-jenkins
+  description: Jenkins formula for Opsbox EcoSystem
+  vendor: Opsbox EcoSystem
+buildSettings:
+  docker:
+    base: "jenkins/jenkins:2.319.1"
+    tag: "registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.0-2.319.1"
+    build: true
+  pom: pom.xml
+  pomIgnoreRoot: true
+  pomIncludeWar: true
+
+war:
+  groupId: "org.jenkins-ci.main"
+  artifactId: "jenkins-war"
+  source:
+    version: 2.319.1
+    
+systemProperties: 
+  # 功能特性
+  jenkins.install.runSetupWizard: "false"
+  jenkins.model.Jenkins.slaveAgentPort: "50000"
+  jenkins.model.Jenkins.slaveAgentPortEnforce: "true"
+  hudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID: "true"
+  # 不安全特性，可以不用开启
+  hudson.model.ParametersAction.keepUndefinedParameters: "true"
+  # encoding
+  file.encoding: "UTF-8"
+  sun.jnu.encoding: "UTF-8"
+  # timezone
+  user.timezone: "Asia/Shanghai"
+  org.apache.commons.jelly.tags.fmt.timeZone: "Asia/Shanghai"
+  # 系统调优参数
+  hudson.model.LoadStatistics.clock: "2000"
+  com.sun.jndi.ldap.connect.pool.timeout: "300000"
+casc:
+  - id: "casc"
+    source:
+      dir: casc.yml
+
+groovyHooks:
+  - type: "init"
+    id: "bundle-plugins"
+    source:
+      dir: remove-bundle-plugins.groovy
+
+# 注：使用了pom.xml方式管理插件，这里就不生效
+plugins:
+  - source:
+      git: https://github.com/seanly/pipeline-gitee-lib-plugin.git
+      branch: master
+
