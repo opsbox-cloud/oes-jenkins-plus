@@ -40,9 +40,11 @@ casc:
     source:
       dir: casc.yml
 
-groovyHooks:
-  - type: "init"
-    id: "bundle-plugins"
-    source:
-      dir: remove-bundle-plugins.groovy
+plugins:
 
+# Special Plugins (not contained on Jenkins UpdateSite)
+  - groupId: org.jenkins-ci.plugins
+    artifactId: pipeline-gitee-lib
+    source:
+      git: https://gitee.com/opsbox-ecosystem/pipeline-gitee-lib-plugin.git
+      branch: master
