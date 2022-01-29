@@ -148,6 +148,11 @@
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>blueocean-executor-info</artifactId>
+      <version>1.25.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-jira</artifactId>
       <version>1.25.2</version>
     </dependency>

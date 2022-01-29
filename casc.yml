@@ -1,9 +1,14 @@
 jenkins:
+  mode: EXCLUSIVE
+  numExecutors: 0
+  scmCheckoutRetryCount: 2
+  disableRememberMe: true
   systemMessage: "oes-jenkins - Jenkins for Opsbox EcoSystem"
 
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: true
+
   agentProtocols:
     - "JNLP4-connect"
     - "Ping"
