@@ -3,7 +3,7 @@ jenkins:
   numExecutors: 0
   scmCheckoutRetryCount: 2
   disableRememberMe: true
-  systemMessage: "oes-jenkins - Jenkins for Opsbox EcoSystem"
+  systemMessage: "Jenkins for Opsbox EcoSystem"
 
   crumbIssuer:
     standard:

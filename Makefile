@@ -2,7 +2,7 @@
 .PHONY: all
 
 ARTIFACT_ID = oes-jenkins
-VERSION = v0.1.0-2.319.1-SNAPSHOT
+VERSION = v0.1.1-2.319.1-SNAPSHOT
 
 all: clean build
 

@@ -1,0 +1,40 @@
+version: '3'
+services:
+  jenkins-master:
+    container_name: jenkins
+    image: registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.1-2.319.1
+    restart: unless-stopped
+    ports:
+      - 30080:8080
+      - 50000:50000
+    volumes:
+      - /data/oes/data/jenkins:/var/jenkins_home
+    environment:
+      JAVA_OPTS: >-
+        -server
+        -Xmx2g -Xms1g
+        -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport
+        -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelOldGC
+        -XX:MaxGCPauseMillis=100 -XX:+UseAdaptiveSizePolicy
+        -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
+        -Djenkins.install.runSetupWizard=false
+        -Dhudson.model.LoadStatistics.clock=2000
+        -Dhudson.model.ParametersAction.keepUndefinedParameters=true
+        -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
+        -Duser.timezone=Asia/Shanghai
+        -Dcom.sun.jndi.ldap.connect.pool.timeout=300000
+        -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
+  jenkins-slave:
+    image: registry.cn-hangzhou.aliyuncs.com/k8ops/jenkins-slave:swarm-dind
+    restart: unless-stopped
+    privileged: true
+    depends_on:
+      - jenkins-master
+    links:
+      - jenkins-master
+    environment:
+      JENKINS_URL: http://jenkins-master:8080
+      JENKINS_USR: admin
+      JENKINS_PSW: jenkins
+      LABELS: docker
+

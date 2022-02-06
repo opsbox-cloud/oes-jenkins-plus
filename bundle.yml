@@ -47,15 +47,13 @@ plugins:
   - groupId: org.jenkins-ci.plugins
     artifactId: keycloak
     source:
-      git: https://github.com/seanly/keycloak-plugin.git
+      git: https://gitee.com/opsbox-ecosystem/keycloak-plugin.git
       branch: fix-configure-load-error
-    # https://github.com/opsbox-ecosystem/oes-pipeline-plugin
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-pipeline
     source:
       git: https://gitee.com/opsbox-ecosystem/oes-pipeline-plugin.git
-      branch: develop
-    
+      branch: master
 casc:
   - id: "casc"
     source:
