@@ -6,7 +6,7 @@ bundle:
 buildSettings:
   docker:
     base: "jenkins/jenkins:2.319.1"
-    tag: "registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.0-2.319.1"
+    tag: "registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.1-2.319.1"
     build: true
   pom: pom.xml
   pomIgnoreRoot: true
