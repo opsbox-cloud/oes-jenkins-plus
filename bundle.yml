@@ -40,7 +40,7 @@ plugins:
 
 # Special Plugins (not contained on Jenkins UpdateSite)
   - groupId: org.jenkins-ci.plugins
-    artifactId: pipeline-git-lib
+    artifactId: pipeline-git-groovy-lib
     source:
       git: https://jihulab.com/opsbox-ecosystem/pipeline-git-lib-plugin.git
       branch: master
