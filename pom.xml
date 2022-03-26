@@ -8,27 +8,30 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>cn.opsbox.jenkinsci</groupId>
-  <artifactId>oes-jenkins</artifactId>
+  <artifactId>oes-jenkins-plus</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 
-  <name>Opsbox EcoSystem Jenkins</name>
-  <description>Jenkins for Opsbox technologies.</description>
-  <url>https://seanly.github.io/oes-jenkins/</url>
-
+  <name>OES Jenkins Plus</name>
+  <description>Jenkins distribution for Opsbox.</description>
+  <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
   <licenses>
     <license>
-      <name>Apache License 2.0</name>
-      <comments>https://github.com/opsbox-ecosystem/oes-jenkins-cwp/blob/master/LICENSE</comments>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
     </license>
   </licenses>
-
+  <scm>
+    <connection>scm:git:git://github.com/${gitHubRepo}.git</connection>
+    <developerConnection>scm:git:git@github.com:${gitHubRepo}.git</developerConnection>
+    <url>https://github.com/${gitHubRepo}</url>
+    <tag>${scmTag}</tag>
+  </scm>
   <repositories>
     <repository>
       <id>repo.jenkins-ci.org</id>
       <url>https://repo.jenkins-ci.org/public/</url>
     </repository>
   </repositories>
-
   <pluginRepositories>
     <pluginRepository>
       <id>repo.jenkins-ci.org</id>
@@ -41,11 +44,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <java.level>8</java.level>
-    <java.version>1.8</java.version>
-    <jdk.version>1.8</jdk.version>
-    <java.level.test>8</java.level.test>
+    <java.level>11</java.level>
+    <java.version>11</java.version>
+    <jdk.version>11</jdk.version>
+    <java.level.test>11</java.level.test>
     <jenkins.version>2.319.1</jenkins.version>
+    <gitHubRepo>opsbox-ecosystem/${project.artifactId}</gitHubRepo>
   </properties>
 
   <dependencyManagement>
@@ -148,6 +152,11 @@
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>blueocean-executor-info</artifactId>
+      <version>1.25.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-jira</artifactId>
       <version>1.25.2</version>
     </dependency>
@@ -170,16 +179,6 @@
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>gitlab-api</artifactId>
       <version>1.0.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>docker-commons</artifactId>
-      <version>1.17</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>external-monitor-job</artifactId>
-      <version>1.7</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
@@ -267,23 +266,8 @@
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>htmlpublisher</artifactId>
-      <version>1.25</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>jira</artifactId>
       <version>3.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>kubernetes-cd</artifactId>
-      <version>2.3.1</version>
-    </dependency>
-    <dependency>
-      <groupId>io.jenkins.plugins</groupId>
-      <artifactId>kubesphere-token-auth</artifactId>
-      <version>1.7</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -309,11 +293,6 @@
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>okhttp-api</artifactId>
       <version>4.9.2-20211102</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>pam-auth</artifactId>
-      <version>1.6</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -363,11 +342,6 @@
       <artifactId>credentials</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>cvs</artifactId>
-      <version>2.16</version>
-    </dependency>
-    <dependency>
       <groupId>org.jvnet.hudson.plugins</groupId>
       <artifactId>favorite</artifactId>
       <version>2.3.2</version>
@@ -397,31 +371,6 @@
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>javadoc</artifactId>
-      <version>1.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>jdk-tool</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>conditional-buildstep</artifactId>
-      <version>1.4.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>docker-workflow</artifactId>
-      <version>1.24</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>google-oauth-plugin</artifactId>
-      <version>1.0.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>job-dsl</artifactId>
       <version>1.78.3</version>
     </dependency>
@@ -444,11 +393,6 @@
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>matrix-auth</artifactId>
       <version>3.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>mercurial</artifactId>
-      <version>2.16</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -476,17 +420,7 @@
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>sse-gateway</artifactId>
-      <version>1.24</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>mailer</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>matrix-project</artifactId>
-      <version>1.19</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -517,11 +451,6 @@
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>snakeyaml-api</artifactId>
       <version>1.29.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>run-condition</artifactId>
-      <version>1.5</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -630,11 +559,6 @@
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>pipeline-gitee-lib</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>categorized-view</artifactId>
       <version>1.12</version>
     </dependency>
@@ -651,6 +575,11 @@
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>swarm</artifactId>
       <version>3.29</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>gitlab-plugin</artifactId>
+      <version>1.5.27</version>
     </dependency>
   </dependencies>
 

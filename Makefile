@@ -1,22 +1,26 @@
 # Just a Makefile for manual testing
-.PHONY: all
 
-ARTIFACT_ID = oes-jenkins
-VERSION = v0.1.0-2.319.1-SNAPSHOT
+include .env
+
+.PHONY: all
 
 all: clean build
 
 clean:
 	rm -rf tmp
 
-build: tmp/output/target/${ARTIFACT_ID}-${VERSION}.war
+build: tmp/output/target/${packageName}-${packageVersion}.war
 
-tmp/output/target/${ARTIFACT_ID}-${VERSION}.war:
+tmp/output/target/${packageName}-${packageVersion}.war:
+	./template.sh ./bundle.yml > ./bundle-result.yml
 	java \
 	    -jar $(shell ls ./cwp-*.jar) \
-	    -configPath bundle.yml -version ${VERSION}
+	    -configPath ./bundle-result.yml -version ${packageVersion}
 
-run: tmp/output/target/${ARTIFACT_ID}-${VERSION}.war
+run: tmp/output/target/${packageName}-${packageVersion}.war
 	docker run --rm \
 	    -p 8080:8080 \
 	    jenkins-experimental/demo-pom-input
+
+debug:
+	docker-compose up
