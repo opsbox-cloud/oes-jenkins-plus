@@ -5,8 +5,8 @@ bundle:
   vendor: Opsbox EcoSystem
 buildSettings:
   docker:
-    base: "jenkins/jenkins:2.319.1"
-    tag: "registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.1-2.319.1"
+    base: "jenkins/jenkins:${jenkinsVersion}"
+    tag: "${registryUrl}/${registryProject}/${packageName}:${packageVersion}"
     build: true
   pom: pom.xml
   pomIgnoreRoot: true
@@ -40,9 +40,9 @@ plugins:
 
 # Special Plugins (not contained on Jenkins UpdateSite)
   - groupId: org.jenkins-ci.plugins
-    artifactId: pipeline-gitee-lib
+    artifactId: pipeline-git-lib
     source:
-      git: https://gitee.com/opsbox-ecosystem/pipeline-gitee-lib-plugin.git
+      git: https://jihulab.com/opsbox-ecosystem/pipeline-git-lib-plugin.git
       branch: master
   - groupId: org.jenkins-ci.plugins
     artifactId: keycloak
@@ -52,7 +52,12 @@ plugins:
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-pipeline
     source:
-      git: https://gitee.com/opsbox-ecosystem/oes-pipeline-plugin.git
+      git: https://github.com/opsbox-ecosystem/oes-pipeline-plugin.git
+      branch: master
+  - groupId: cn.opsbox.jenkinsci.plugins
+    artifactId: oes-template
+    source:
+      git: https://github.com/opsbox-ecosystem/oes-template-plugin.git
       branch: master
 casc:
   - id: "casc"

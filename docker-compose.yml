@@ -2,7 +2,7 @@ version: '3'
 services:
   jenkins-master:
     container_name: jenkins
-    image: registry.cn-hangzhou.aliyuncs.com/k8ops/oes-jenkins:v0.1.1-2.319.1
+    image: ${registryUrl}/${registryProject}/${packageName}:${packageVersion}
     restart: unless-stopped
     ports:
       - 30080:8080
