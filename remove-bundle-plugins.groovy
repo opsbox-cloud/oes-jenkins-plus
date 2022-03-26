@@ -5,6 +5,8 @@ import java.io.InputStream;
 import hudson.init.InitMilestone;
 import jenkins.model.Jenkins;
 
+// FROM: https://github.com/kubesphere/ks-jenkins/blob/master/remove-bundle-plugins.groovy
+
 Thread.start {
   while(true) {
     Jenkins instance = Jenkins.getInstance();
