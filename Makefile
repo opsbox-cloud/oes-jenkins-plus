@@ -23,4 +23,5 @@ run: tmp/output/target/${packageName}-${packageVersion}.war
 	    jenkins-experimental/demo-pom-input
 
 debug:
+	docker-compose down
 	docker-compose up
