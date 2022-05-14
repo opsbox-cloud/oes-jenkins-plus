@@ -25,7 +25,7 @@ services:
         -Dcom.sun.jndi.ldap.connect.pool.timeout=300000
         -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
   jenkins-slave:
-    image: registry.cn-hangzhou.aliyuncs.com/k8ops/jenkins-slave:swarm-dind
+    image: seanly/jenkins-agent:swarm
     restart: unless-stopped
     privileged: true
     depends_on:

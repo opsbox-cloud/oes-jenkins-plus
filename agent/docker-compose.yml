@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins-agent:
+    build:
+      context: ./
+      args:
+        ENABLE_SERVICE: jenkins-agent
+    image: seanly/jenkins-agent:inbound
+
+  jenkins-swarm:
+    build:
+      context: ./
+      args:
+        ENABLE_SERVICE: swarm-client
+    image: seanly/jenkins-agent:swarm

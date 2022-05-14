@@ -42,22 +42,22 @@ plugins:
   - groupId: org.jenkins-ci.plugins
     artifactId: pipeline-git-groovy-lib
     source:
-      git: https://jihulab.com/opsbox-ecosystem/pipeline-git-lib-plugin.git
+      git: https://jihulab.com/opsbox-dev/pipeline-git-lib-plugin.git
       branch: master
   - groupId: org.jenkins-ci.plugins
     artifactId: keycloak
     source:
-      git: https://gitee.com/opsbox-ecosystem/keycloak-plugin.git
+      git: https://github.com/seanly/keycloak-plugin.git
       branch: fix-configure-load-error
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-pipeline
     source:
-      git: https://github.com/opsbox-ecosystem/oes-pipeline-plugin.git
+      git: https://github.com/opsbox-dev/oes-pipeline-plugin.git
       branch: master
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-template
     source:
-      git: https://github.com/opsbox-ecosystem/oes-template-plugin.git
+      git: https://github.com/opsbox-dev/oes-template-plugin.git
       branch: master
 casc:
   - id: "casc"
