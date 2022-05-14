@@ -1,0 +1,21 @@
+version: '3'
+
+dotenv: ['.env']
+
+includes:
+  jenkins:
+    taskfile: ./jenkins/Taskfile.yml
+    dir: ./jenkins
+  agent:
+    taskfile: ./agent/Taskfile.yml
+    dir: ./agent
+
+tasks:
+  debug:
+    cmds:
+      - docker-compose down
+      - docker-compose up
+
+  git-clean:
+    cmds:
+      - git clean -dfx

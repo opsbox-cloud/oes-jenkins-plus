@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - ./template.sh ./bundle.yml > ./bundle-result.yml
+      - java -jar ./cwp-cli.jar -configPath ./bundle-result.yml -version ${packageVersion}
+
+  push:
+    cmds:
+      - docker push ${registryProject}/${packageName}:${packageVersion}
+
+  push-aliyun:
+    cmds:
+      - docker tag ${registryProject}/${packageName}:${packageVersion} ${acr}/${acr_ns}/${packageName}:${packageVersion}
+      - docker push ${acr}/${acr_ns}/${packageName}:${packageVersion}
+    env:
+      acr: registry.cn-hangzhou.aliyuncs.com
+      acr_ns: k8ops

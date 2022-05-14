@@ -1,12 +1,12 @@
 bundle:
   groupId: io.github.opsbox-ecosystem
-  artifactId: oes-jenkins
+  artifactId: oes-jenkins-plus
   description: Jenkins formula for Opsbox EcoSystem
   vendor: Opsbox EcoSystem
 buildSettings:
   docker:
     base: "jenkins/jenkins:${jenkinsVersion}"
-    tag: "${registryUrl}/${registryProject}/${packageName}:${packageVersion}"
+    tag: "${registryProject}/${packageName}:${packageVersion}"
     build: true
   pom: pom.xml
   pomIgnoreRoot: true
