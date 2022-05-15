@@ -6,10 +6,15 @@ FROM jenkins/inbound-agent:alpine
 MAINTAINER Seanly Liu<seanly@aliyun.com>
 
 USER root
+
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && apk update
 COPY --from=downloader /usr/local/bin/hd /usr/local/bin/hd
 
-RUN apk add --no-cache docker docker-compose supervisor curl busybox-extras
+RUN apk add --no-cache docker docker-compose supervisor curl busybox-extras \
+  && apk add tzdata \
+  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+  && echo "Asia/Shanghai" > /etc/timezone \
+  && apk del tzdata
 
 # install tools
 RUN hd install rancher/dapper
