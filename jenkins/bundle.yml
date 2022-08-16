@@ -57,8 +57,8 @@ plugins:
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-template
     source:
-      git: https://github.com/opsbox-dev/oes-template-plugin.git
-      branch: master
+      git: https://github.com/jenkinsci/oes-template-plugin.git
+      branch: main
 casc:
   - id: "casc"
     source:
