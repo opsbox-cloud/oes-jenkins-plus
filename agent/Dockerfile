@@ -58,8 +58,6 @@ RUN ln -s /usr/bin/cni /usr/bin/bridge && \
     ln -s /usr/bin/cni /usr/bin/host-local && \
     ln -s /usr/bin/cni /usr/bin/loopback && \
     ln -s /usr/bin/cni /usr/bin/portmap && \
-    ln -s /usr/bin/k3s /usr/bin/crictl && \
-    ln -s /usr/bin/k3s /usr/bin/ctr && \
     ln -s /usr/bin/k3s /usr/bin/k3s-agent && \
     ln -s /usr/bin/k3s /usr/bin/k3s-etcd-snapshot && \
     ln -s /usr/bin/k3s /usr/bin/k3s-server && \

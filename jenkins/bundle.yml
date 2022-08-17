@@ -24,8 +24,6 @@ systemProperties:
   jenkins.model.Jenkins.slaveAgentPort: "50000"
   jenkins.model.Jenkins.slaveAgentPortEnforce: "true"
   hudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID: "true"
-  # 不安全特性，可以不用开启
-  hudson.model.ParametersAction.keepUndefinedParameters: "true"
   # encoding
   file.encoding: "UTF-8"
   sun.jnu.encoding: "UTF-8"
