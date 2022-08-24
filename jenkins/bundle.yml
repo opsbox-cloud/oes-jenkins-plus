@@ -38,11 +38,6 @@ plugins:
 
 # Special Plugins (not contained on Jenkins UpdateSite)
   - groupId: org.jenkins-ci.plugins
-    artifactId: pipeline-git-groovy-lib
-    source:
-      git: https://jihulab.com/opsbox-dev/pipeline-git-lib-plugin.git
-      branch: master
-  - groupId: org.jenkins-ci.plugins
     artifactId: keycloak
     source:
       git: https://github.com/seanly/keycloak-plugin.git
