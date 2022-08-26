@@ -219,7 +219,7 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>gitlab-api</artifactId>
-      <version>1.0.6</version>
+      <version>5.0.1-78.v47a_45b_9f78b_7</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
@@ -303,7 +303,7 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>gitlab-branch-source</artifactId>
-      <version>1.5.4</version>
+      <version>636.v55fd8144d335</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
