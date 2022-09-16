@@ -9,7 +9,7 @@ COPY --from=downloader /usr/local/bin/hd /usr/local/bin/hd
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk update && \
-    apk add --no-cache docker docker-compose supervisor curl busybox-extras bash vim && \
+    apk add --no-cache docker docker-compose supervisor curl busybox-extras bash vim rsync && \
     apk add tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone && \
