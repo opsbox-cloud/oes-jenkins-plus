@@ -47,11 +47,6 @@ plugins:
     source:
       git: https://github.com/opsbox-dev/oes-pipeline-plugin.git
       branch: master
-  - groupId: cn.opsbox.jenkinsci.plugins
-    artifactId: oes-template
-    source:
-      git: https://github.com/jenkinsci/oes-template-plugin.git
-      branch: main
 casc:
   - id: "casc"
     source:

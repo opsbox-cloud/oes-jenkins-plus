@@ -586,6 +586,11 @@
       <artifactId>docker-workflow</artifactId>
       <version>1.28</version>
     </dependency>
+    <dependency>
+      <groupId>cn.opsbox.jenkinsci.plugins</groupId>
+      <artifactId>oes-template</artifactId>
+      <version>1.37.v02eddc49d161</version>
+    </dependency>
   </dependencies>
 
 </project>
