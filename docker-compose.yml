@@ -2,7 +2,7 @@ version: '3'
 services:
   jenkins-master:
     container_name: jenkins
-    image: ${registryUrl}/${registryProject}/${packageName}:${packageVersion}
+    image: ${registryProject}/${packageName}:${packageVersion}
     restart: unless-stopped
     ports:
       - 30080:8080
