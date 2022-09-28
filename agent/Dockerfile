@@ -2,7 +2,8 @@ FROM ghcr.io/linuxsuren/hd:v0.0.55 as downloader
 
 FROM jenkins/inbound-agent:alpine
 
-MAINTAINER Seanly Liu<seanly@aliyun.com>
+LABEL dev.opsbox.image.author="Seanly Liu<seanly@opsbox.dev>" \
+      dev.opsbox.image.name="jenkins-agent"
 
 USER root
 COPY --from=downloader /usr/local/bin/hd /usr/local/bin/hd
@@ -105,5 +106,6 @@ EXPOSE 2375
 ARG ENABLE_SERVICE=jenkins-agent
 RUN mv /etc/supervisor/conf.d/${ENABLE_SERVICE}.conf.disable /etc/supervisor/conf.d/${ENABLE_SERVICE}.conf
 
-RUN mkdir -p /var/log/supervisor/
+RUN mkdir -p /var/log/supervisor/ && \
+    ln -s /usr/local/bin/jenkins-clean-data /etc/periodic/daily/jenkins-clean-data
 ENTRYPOINT ["supervisord", "--nodaemon", "--configuration", "/etc/supervisord.conf"]
