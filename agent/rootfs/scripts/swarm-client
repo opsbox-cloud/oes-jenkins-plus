@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# Usage swarm-client.sh [options] -url http://jenkins [SWARM_OPTS]
+# Optional environment variables :
+# * JENKINS_URL : alternate jenkins URL
+# * JENKINS_SECRET : agent secret, if not set as an argument
+# * JENKINS_AGENT_NAME : agent name, if not set as an argument
+
+if [ -n "$JENKINS_URL" ]; then
+  URL="-url $JENKINS_URL"
+fi
+
+if [ -n "$JENKINS_USR" ]; then
+  SWARM_OPTS="-username $JENKINS_USR ${SWARM_OPTS}"
+fi
+
+if [ -n "$JENKINS_PSW" ]; then
+  SWARM_OPTS="-password $JENKINS_PSW ${SWARM_OPTS}"
+fi
+
+if [ -n "$LABELS" ]; then
+  _labels_opts=""
+  for _label in ${LABELS}
+  do
+    _label_opts="-labels ${_label}"
+  done
+  SWARM_OPTS="${_labels_opts} ${SWARM_OPTS}"
+fi
+
+EXECUTORS=${EXECUTORS:-1}
+SWARM_OPTS="-executors ${EXECUTORS} ${SWARM_OPTS}"
+
+AGENT_NAME="-name ${HOSTNAME}"
+SWARM_OPTS="-fsroot /home/jenkins -workDir /home/jenkins ${AGENT_NAME} ${SWARM_OPTS}"
+
+#It is fine it blows up for now since it should lead to an error anyway.
+exec java $JAVA_OPTS -jar /usr/share/jenkins/swarm-client.jar ${URL} ${SWARM_OPTS} "$@"

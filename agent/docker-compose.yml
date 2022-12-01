@@ -4,12 +4,11 @@ services:
     build:
       context: ./
       args:
-        ENABLE_SERVICE: jenkins-agent
+        ENABLE_JENKINS_AGENT: jenkins-agent
     image: seanly/jenkins-agent:inbound
-
   jenkins-swarm:
     build:
       context: ./
       args:
-        ENABLE_SERVICE: swarm-client
+        ENABLE_JENKINS_AGENT: swarm-client
     image: seanly/jenkins-agent:swarm
