@@ -1,19 +1,18 @@
-#!/bin/bash 
-set -eux
-mkdir -p /var/log/supervisor/
+#!/bin/bash
 
-if [ "x${ENABLE_JENKINS_AGENT}" != "x" ]; then
-    if [ ! -f /etc/supervisor/conf.d/${ENABLE_JENKINS_AGENT}.conf.disable ]; then
-        echo "--//ERR: no support"
-        #exit 1
-    fi
+mkdir -p /var/log/supervisor/ 
 
-    mv /etc/supervisor/conf.d/${ENABLE_JENKINS_AGENT}.conf.disable /etc/supervisor/conf.d/${ENABLE_JENKINS_AGENT}.conf
+_agentService=${AGENT_SERVICE:-jenkins-agent}
+
+if [ -f /etc/supervisor/conf.d/${_agentService}.conf.disable ]; then
+  mv /etc/supervisor/conf.d/${_agentService}.conf.disable /etc/supervisor/conf.d/${_agentService}.conf
 fi
 
-if [[ "x${CLEAN_DATA_PERIODIC}" != "x" ]]
-then
-    ln -s /scripts/jenkins-clean-data /etc/periodic/${CLEAN_DATA_PERIODIC}/jenkins-clean-data
+_cleanupPeriodic=${CLEANUP_PERIODIC:-weekly}
+
+if [ -f /usr/local/bin/jenkins-clean-data ]; then
+  ln -s /scripts/jenkins-clean-data /etc/periodic/${_cleanupPeriodic}/jenkins-clean-data
 fi
 
-exec supervisord --nodaemon --configuration /etc/supervisord.conf
+# start superviosrd
+supervisord --nodaemon --configuration /etc/supervisord.conf
