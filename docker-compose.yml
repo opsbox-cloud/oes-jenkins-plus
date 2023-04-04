@@ -25,7 +25,7 @@ services:
         -Dcom.sun.jndi.ldap.connect.pool.timeout=300000
         -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
   jenkins-slave:
-    image: seanly/jenkins-agent:swarm
+    image: seanly/jenkins-agent:inbound-v3
     restart: unless-stopped
     privileged: true
     depends_on:
@@ -37,4 +37,6 @@ services:
       JENKINS_USR: admin
       JENKINS_PSW: jenkins
       LABELS: docker
+      AGENT_SERVICE: swarm-client
+      CLEANUP_PERIODIC: daily
 

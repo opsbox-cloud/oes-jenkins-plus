@@ -3,13 +3,12 @@ services:
   jenkins-agent:
     build:
       context: ./
-      args:
-        ENABLE_SERVICE: jenkins-agent
-    image: seanly/jenkins-agent:inbound
+    image: seanly/jenkins-agent:inbound-v3
+    privileged: true
 
   jenkins-swarm:
-    build:
-      context: ./
-      args:
-        ENABLE_SERVICE: swarm-client
-    image: seanly/jenkins-agent:swarm
+    image: seanly/jenkins-agent:inbound-v3
+    environment:
+      AGENT_SERVICE: swarm-client
+      CLEANUP_PERIODIC: daily
+    privileged: true
