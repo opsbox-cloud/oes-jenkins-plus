@@ -22,7 +22,7 @@ if [ -n "$LABELS" ]; then
   _labels_opts=""
   for _label in ${LABELS}
   do
-    _labels_opts="-labels ${_label}"
+    _labels_opts="-labels ${_label} ${_labels_opts}"
   done
   SWARM_OPTS="${_labels_opts} ${SWARM_OPTS}"
 fi
