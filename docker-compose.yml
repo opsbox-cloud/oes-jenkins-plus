@@ -13,19 +13,17 @@ services:
       JAVA_OPTS: >-
         -server
         -Xmx2g -Xms1g
-        -XX:+UnlockExperimentalVMOptions -XX:+UseContainerSupport
-        -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelOldGC
-        -XX:MaxGCPauseMillis=100 -XX:+UseAdaptiveSizePolicy
         -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8
         -Djenkins.install.runSetupWizard=false
         -Dhudson.model.LoadStatistics.clock=2000
-        -Dhudson.model.ParametersAction.keepUndefinedParameters=true
         -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
         -Duser.timezone=Asia/Shanghai
         -Dcom.sun.jndi.ldap.connect.pool.timeout=300000
         -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
   jenkins-slave:
-    image: seanly/jenkins-agent:inbound-v3
+    build:
+      context: ./agent
+    image: seanly/jenkins-agent:inbound
     restart: unless-stopped
     privileged: true
     depends_on:
