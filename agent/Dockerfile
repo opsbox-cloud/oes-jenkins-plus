@@ -56,4 +56,4 @@ RUN set -eux \
 
 COPY ./rootfs /
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT ["/scripts/entrypoint.sh"]

@@ -48,8 +48,8 @@
     <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <jenkins.version>2.319.1</jenkins.version>
-    <bom>2.319.x</bom>
+    <jenkins.version>2.361.2</jenkins.version>
+    <bom>2.361.x</bom>
     <gitHubRepo>opsbox-ecosystem/${project.artifactId}</gitHubRepo>
   </properties>
 
@@ -58,7 +58,7 @@
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
         <artifactId>bom-${bom}</artifactId>
-        <version>1117.v62a_f6a_01de98</version>
+        <version>1654.vcb_69d035fa_20</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -184,22 +184,22 @@
     <dependency>
       <groupId>io.jenkins</groupId>
       <artifactId>configuration-as-code</artifactId>
-      <version>1.55</version>
+      <version>1569.vb_72405b_80249</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean</artifactId>
-      <version>1.25.2</version>
+      <version>1.25.8</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-executor-info</artifactId>
-      <version>1.25.2</version>
+      <version>1.25.8</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-jira</artifactId>
-      <version>1.25.2</version>
+      <version>1.25.8</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -214,7 +214,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>antisamy-markup-formatter</artifactId>
-      <version>2.1</version>
+      <version>2.7</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
@@ -228,27 +228,27 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>localization-support</artifactId>
-      <version>1.1</version>
+      <version>1.2</version>
     </dependency>
     <dependency>
       <groupId>org.6wind.jenkins</groupId>
       <artifactId>lockable-resources</artifactId>
-      <version>2.10</version>
+      <version>2.18</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
       <artifactId>maven-plugin</artifactId>
-      <version>3.16</version>
+      <version>3.20</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ant</artifactId>
-      <version>1.13</version>
+      <version>481.v7b_09e538fcca</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>apache-httpcomponents-client-4-api</artifactId>
-      <version>4.5.13-1.0</version>
+      <version>4.5.13-138.v4e7d9a_7b_a_e61</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -257,17 +257,17 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>branch-api</artifactId>
-      <version>2.7.0</version>
+      <version>2.1046.v0ca_37783ecc5</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>display-url-api</artifactId>
-      <version>2.3.5</version>
+      <version>2.3.6</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>build-timeout</artifactId>
-      <version>1.20</version>
+      <version>1.24</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -280,12 +280,7 @@
     <dependency>
       <groupId>org.csanchez.jenkins.plugins</groupId>
       <artifactId>kubernetes</artifactId>
-      <version>1.31.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>generic-webhook-trigger</artifactId>
-      <version>1.79</version>
+      <version>3734.v562b_b_a_627ea_c</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -298,67 +293,67 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>github-api</artifactId>
-      <version>1.116</version>
+      <version>1.303-400.v35c2d8258028</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>gitlab-branch-source</artifactId>
-      <version>636.v55fd8144d335</version>
+      <version>642.v9ed86b_b_54384</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>jira</artifactId>
-      <version>3.6</version>
+      <version>3.8</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>localization-zh-cn</artifactId>
-      <version>1.0.23</version>
+      <version>1.0.24</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>mapdb-api</artifactId>
-      <version>1.0.9.0</version>
+      <version>1.0.9-28.vf251ce40855d</version>
     </dependency>
     <dependency>
       <groupId>org.jenkinsci.plugins</groupId>
       <artifactId>managed-scripts</artifactId>
-      <version>1.4</version>
+      <version>1.5.6</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>node-iterator-api</artifactId>
-      <version>1.5</version>
+      <version>49.v58a_8b_35f8363</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>okhttp-api</artifactId>
-      <version>4.9.2-20211102</version>
+      <version>4.9.3-108.v0feda04578cf</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ssh-slaves</artifactId>
-      <version>1.31.2</version>
+      <version>2.854.v7fd446b_337c9</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>pipeline-restful-api</artifactId>
-      <version>0.9</version>
+      <version>0.11</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.pipeline-stage-view</groupId>
       <artifactId>pipeline-rest-api</artifactId>
-      <version>2.20</version>
+      <version>2.27</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-bitbucket-branch-source</artifactId>
-      <version>737.vdf9dc06105be</version>
+      <version>791.vb_eea_a_476405b</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>config-file-provider</artifactId>
-      <version>3.8.2</version>
+      <version>3.11.1</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
@@ -368,12 +363,12 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>command-launcher</artifactId>
-      <version>1.5</version>
+      <version>90.v669d7ccb_7c31</version>
     </dependency>
     <dependency>
       <groupId>org.jvnet.hudson.plugins</groupId>
       <artifactId>favorite</artifactId>
-      <version>2.3.2</version>
+      <version>2.4.1</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -398,42 +393,42 @@
     <dependency>
       <groupId>com.coravy.hudson.plugins.github</groupId>
       <artifactId>github</artifactId>
-      <version>1.32.0</version>
+      <version>1.36.0</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>github-branch-source</artifactId>
-      <version>2.9.1</version>
+      <version>1695.v88de84e9f6b_9</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>handy-uri-templates-2-api</artifactId>
-      <version>2.1.8-1.0</version>
+      <version>2.1.8-22.v77d5b_75e6953</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>job-dsl</artifactId>
-      <version>1.78.3</version>
+      <version>1.81</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
-      <version>1.53</version>
+      <version>1156.vcf492e95a_a_b_0</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>kubernetes-client-api</artifactId>
-      <version>5.11.1-179.v12037658df90</version>
+      <version>5.12.2-193.v26a_6078f65a_9</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ldap</artifactId>
-      <version>2.7</version>
+      <version>2.12</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>matrix-auth</artifactId>
-      <version>3.0</version>
+      <version>3.1.5</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -451,7 +446,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>role-strategy</artifactId>
-      <version>3.2.0</version>
+      <version>562.v44e9a_e828d0e</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -470,62 +465,62 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>parameterized-trigger</artifactId>
-      <version>2.39</version>
+      <version>2.45</version>
     </dependency>
     <dependency>
       <groupId>org.jenkinsci.plugins</groupId>
       <artifactId>pipeline-stage-tags-metadata</artifactId>
-      <version>1.9.3</version>
+      <version>2.2118.v31fd5b_9944b_5</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>plain-credentials</artifactId>
-      <version>1.7</version>
+      <version>139.ved2b_9cf7587b</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>resource-disposer</artifactId>
-      <version>0.14</version>
+      <version>0.20</version>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>snakeyaml-api</artifactId>
-      <version>1.29.1</version>
+      <version>1.32-86.ve3f030a_75631</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ssh-credentials</artifactId>
-      <version>1.19</version>
+      <version>305.v8f4381501156</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>subversion</artifactId>
-      <version>2.15.1</version>
+      <version>2.16.0</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>support-core</artifactId>
-      <version>2.70</version>
+      <version>1206.v14049fa_b_d860</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>trilead-api</artifactId>
-      <version>1.0.13</version>
+      <version>2.72.v2a_3236754f73</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>variant</artifactId>
-      <version>1.4</version>
+      <version>59.vf075fe829ccb</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ws-cleanup</artifactId>
-      <version>0.38</version>
+      <version>0.43</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-aggregator</artifactId>
-      <version>2.6</version>
+      <version>590.v6a_d052e5a_a_b_5</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.ui</groupId>
@@ -545,17 +540,17 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-disk-usage-simple</artifactId>
-      <version>0.10</version>
+      <version>178.v1a_4d2f6359a_8</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>pubsub-light</artifactId>
-      <version>1.16</version>
+      <version>1.17</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>pipeline-utility-steps</artifactId>
-      <version>2.11.0</version>
+      <version>2.13.1</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -565,7 +560,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>list-git-branches-parameter</artifactId>
-      <version>0.0.9</version>
+      <version>0.0.11</version>
     </dependency>
     <dependency>
       <groupId>com.sonyericsson.hudson.plugins.rebuild</groupId>
@@ -574,22 +569,26 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>swarm</artifactId>
-      <version>3.29</version>
+      <version>3.37</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>gitlab-plugin</artifactId>
-      <version>1.5.27</version>
+      <version>1.5.36</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>docker-workflow</artifactId>
-      <version>1.28</version>
+      <version>528.v7c193a_0b_e67c</version>
     </dependency>
     <dependency>
       <groupId>cn.opsbox.jenkinsci.plugins</groupId>
       <artifactId>oes-template</artifactId>
       <version>1.37.v02eddc49d161</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.plugins</groupId>
+      <artifactId>dark-theme</artifactId>
     </dependency>
   </dependencies>
 

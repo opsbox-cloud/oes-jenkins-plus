@@ -8,10 +8,10 @@ if [ -f /etc/supervisor/conf.d/${_agentService}.conf.disable ]; then
   mv /etc/supervisor/conf.d/${_agentService}.conf.disable /etc/supervisor/conf.d/${_agentService}.conf
 fi
 
-_cleanupPeriodic=${CLEANUP_PERIODIC:-daily}
+_cleanupPeriodic=${CLEANUP_PERIODIC:-weekly}
 
 if [ -f /usr/local/bin/jenkins-clean-data ]; then
-  ln -s /usr/local/bin/jenkins-clean-data /etc/periodic/${_cleanupPeriodic}/jenkins-clean-data
+  ln -s /scripts/jenkins-clean-data /etc/periodic/${_cleanupPeriodic}/jenkins-clean-data
 fi
 
 # start superviosrd
