@@ -8,7 +8,7 @@ services:
       - 30080:8080
       - 50000:50000
     volumes:
-      - /data/oes/data/jenkins:/var/jenkins_home
+      - .data/jenkins:/var/jenkins_home
     environment:
       JAVA_OPTS: >-
         -server
@@ -20,7 +20,7 @@ services:
         -Duser.timezone=Asia/Shanghai
         -Dcom.sun.jndi.ldap.connect.pool.timeout=300000
         -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
-  jenkins-slave:
+  jenkins-agent:
     build:
       context: ./agent
     image: seanly/jenkins-agent:inbound
