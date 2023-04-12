@@ -41,7 +41,7 @@ plugins:
     artifactId: keycloak
     source:
       git: https://github.com/seanly/keycloak-plugin.git
-      branch: fix-configure-load-error
+      branch: master
   - groupId: cn.opsbox.jenkinsci.plugins
     artifactId: oes-pipeline
     source:
